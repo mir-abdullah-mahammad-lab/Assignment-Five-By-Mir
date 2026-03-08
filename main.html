@@ -31,17 +31,17 @@
         </div>
     </div>
  </nav>
- <section class="threeBtn w-[1110px] h-[88px] container mx-auto mt-10 content-center space-x-2 bg-white">
-    <button class="btn btn-soft btn-primary">All</button>
-    <button class="btn btn-soft btn-primary">Open</button>
-    <button class="btn btn-soft btn-primary">Closed</button>
+ <section class="threeBtn container mx-auto mt-10 content-center space-x-2 bg-white">
+    <button onclick="loadAllCard()" class="btn btn-lg btn-soft btn-primary">All</button>
+    <button class="btn btn-lg btn-soft btn-primary">Open</button>
+    <button class="btn btn-lg btn-soft btn-primary">Closed</button>
  </section>
 
-    <div class="flex justify-between container mx-auto w-[1110px] h-[88px] mt-10 bg-white">
+    <div class="flex justify-between container mx-auto mt-10 bg-white">
         <div class="flex gap-2">
             <img src="./assets/Aperture.png" class="w-10 h-10" >
             <div class="text-nowrap">
-                <p> <span>50</span> Issues </p>
+                <p> <span id="issues"></span> Issues </p>
                 <p>Track and manage your project issues</p>
             </div>
         </div>
@@ -52,11 +52,14 @@
         
         </div>
     </div>
+     
+    <!-- LOADING ALL CRDS -->
+    <section id="AllCardContain" class="grid grid-cols-4 gap-5 container mx-auto bg-white border">
+        
 
-    <section id="AllCardContain">
-        <div>
-            
-        </div>
+        
     </section>
+
+    <script src="./cards.js"></script>
 </body>
 </html>
