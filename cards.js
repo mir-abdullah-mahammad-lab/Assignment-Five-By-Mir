@@ -21,7 +21,8 @@ const loadAllCard = ()=>{
             
             console.log(ob)
             const cardHolderDiv = document.createElement('div')
-            cardHolderDiv.innerHTML = `<div id="${ob.id}" class="space-y-5 bg-red-100 container h-full">
+            cardHolderDiv.innerHTML = `${ob.status ==='open'? ` <div id="${ob.id}" class="space-y-5 bg-red-100 container h-full border-t-4 border-[#00A96E]">`:` <div id="${ob.id}" class="space-y-5 bg-red-100 container h-full border-t-4 border-[#A855F7]">`}
+           
             <div id="highLow" class="flex justify-between">
                 
                 ${ob.status === 'open'? `<img src="./assets/Open-Status.png" class="w-10 h-10">`:`<img src="./assets/Closed-Status.png" class="w-10 h-10">`}
