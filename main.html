@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Page</title>
+        <!-- font Added -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+    
+    <!-- daisy CDN and tailwind-->
+     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script> 
+     
+     <link rel="stylesheet" href="./style.css">
+</head>
+<body class="bg-[#F8FAFC] w-full h-full">
+ <nav>
+    <div class="navbar bg-base-100 shadow-sm">
+        <div class="flex-1">
+           <div class="flex gap-2 items-center">
+             <img src="./assets/github-logo.png" class="w-9 h-10">
+            <p>Github Issues Tracker</p>
+           </div>
+        </div>
+
+        <div class="flex gap-2">
+            <input type="text" placeholder="Search Issues.." class="input input-bordered w-24 md:w-auto" />
+            <button class="btn btn-primary block font-semibold text-lg"> <span class="font-bold text-2xl">+</span> New Issue </button>
+        </div>
+    </div>
+ </nav>
+ <section class="threeBtn w-[1110px] h-[88px] container mx-auto mt-10 content-center space-x-2 bg-white">
+    <button class="btn btn-soft btn-primary">All</button>
+    <button class="btn btn-soft btn-primary">Open</button>
+    <button class="btn btn-soft btn-primary">Closed</button>
+ </section>
+
+    <div class="flex justify-between container mx-auto w-[1110px] h-[88px] mt-10 bg-white">
+        <div class="flex gap-2">
+            <img src="./assets/Aperture.png" class="w-10 h-10" >
+            <div class="text-nowrap">
+                <p> <span>50</span> Issues </p>
+                <p>Track and manage your project issues</p>
+            </div>
+        </div>
+
+        <div class="flex gap-6">
+            <div class="flex flex-row items-center gap-2"><div class="w-2 h-2 bg-[#00A96E] rounded"></div> <p>open</p></div>
+            <div class="flex flex-row items-center gap-2"><div class="w-2 h-2 bg-[#A855F7] rounded"></div> <p>closed</p></div>
+        
+        </div>
+    </div>
+
+    <section id="AllCardContain">
+        <div>
+            
+        </div>
+    </section>
+</body>
+</html>

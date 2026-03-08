@@ -3,9 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+    <title>Github | Issues</title>
+    <!-- font Added -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
     
+    <!-- daisy CDN and tailwind-->
+     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script> 
+     
+     <link rel="stylesheet" href="./style.css">
+
+</head>
+<body class="relative">
+    <!-- login page -->
+     <div class="w-[520px] h-[740px] flex flex-col items-center gap-5 border absolute top-50 left-150 aspect-auto">
+        <div class="gitLogoDiv flex flex-col items-center">
+            <img src="./assets/github-logo.png" class="m-2">
+            <h1 class="text-2xl font-bold">Github Issues Tracker</h1>
+            <h2 class="text-[#64748B]"> Sign in to manage your issues</h2>
+        </div>
+
+        <div class="SignInDiv">
+            <fieldset class="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4">
+            
+
+            <label class="label">Username</label>
+            <input id="btnUsername" type="email" class="input" placeholder="Enter username" />
+            <p class="text-purple-800 mb-5">Default: admin </p>
+
+            <label class="label">Password</label>
+            <input id="btnPassword" type="password" class="input" placeholder="Enter Password" />
+            <p class="text-purple-800 mb-5">Default: admin123 </p>
+
+            <button id="btnSignIn" class="btn btn-primary mt-4">Sign In</button>
+            </fieldset>
+        </div>
+
+        <div class="bg-slate-100 w-11/12 mx-auto flex flex-col items-center mt-10">
+            <p class="my-5">Demo Credential</p>
+            <p>Username : admin </p>
+            <p>Password: admin123</p>
+        </div>
+     </div>
+    <script src="./go.js"></script>
 </body>
 </html>
