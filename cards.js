@@ -1,7 +1,34 @@
 // console.log('SA:')
+const issues=0;
+const act = (id)=>{
+        const qselctor = document.querySelectorAll('.act')
+        // console.log(qselctor)
+        qselctor.forEach(n => n.classList.remove('act') )
+        const btnAll = document.getElementById(id)
+        btnAll.classList.add('act')
+}
+
+const displayOpenClose =(st)=>{
+    const allHidden = document.querySelectorAll('.hidden')
+    allHidden.forEach( hcards => hcards.classList.remove('hidden'))
+
+    const openCard = document.querySelectorAll('.open')
+    const closedCard = document.querySelectorAll('.close')
+    const issueCounter = document.getElementById('issues')
+    if(st ==='open'){
+        issueCounter.innerText = openCard.length
+        closedCard.forEach( c => c.classList.add('hidden'))
+    }else {
+        issueCounter.innerText = closedCard.length
+        openCard.forEach(o => o.classList.add('hidden'))
+    }
+
+    // console.log(opens)
+    // console.log(closed)
+}
 
 const loadAllCard = ()=>{
-    // console.log('ALLLAH AKBER ')
+    console.log('ALLLAH AKBER ')
 
     
 
@@ -10,18 +37,19 @@ const loadAllCard = ()=>{
     .then(d => infoInHtml(d))
 
     const infoInHtml = (d)=>{
-        console.log(d.data)
+        // console.log(d.data)
 
         const allTheCard = document.getElementById('AllCardContain')
         const issueCounter = document.getElementById('issues')
         issueCounter.innerText = d.data.length
+        allTheCard.infoInHtml = " "
         
 
         d.data.forEach( (ob) =>{
             
-            console.log(ob)
+            // console.log(ob)
             const cardHolderDiv = document.createElement('div')
-            cardHolderDiv.innerHTML = `${ob.status ==='open'? ` <div id="${ob.id}" class="space-y-5 bg-red-100 container h-full border-t-4 border-[#00A96E]">`:` <div id="${ob.id}" class="space-y-5 bg-red-100 container h-full border-t-4 border-[#A855F7]">`}
+            cardHolderDiv.innerHTML = `${ob.status ==='open'? ` <div id="${ob.id}" class="open space-y-5 bg-red-100 container h-full border-t-4 border-[#00A96E]">`:` <div id="${ob.id}" class="close space-y-5 bg-red-100 container h-full border-t-4 border-[#A855F7]">`}
            
             <div id="highLow" class="flex justify-between">
                 
@@ -39,16 +67,14 @@ const loadAllCard = ()=>{
             <hr class="text-[#64748b]">
 
             <p>${ob.author}</p>
-            <p>${ob.createdAt}</p>
+            <p>${new Date(ob.createdAt).toISOString().split('T')[0]}</p>
 
         </div>`
         allTheCard.appendChild(cardHolderDiv)
         })
-            
-            
-        
- 
-    }
-
-    
+     }
 }
+
+loadAllCard()
+
+

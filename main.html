@@ -31,10 +31,10 @@
         </div>
     </div>
  </nav>
- <section class="threeBtn container mx-auto mt-10 content-center space-x-2 bg-white">
-    <button onclick="loadAllCard()" class="btn btn-lg btn-soft btn-primary">All</button>
-    <button class="btn btn-lg btn-soft btn-primary">Open</button>
-    <button class="btn btn-lg btn-soft btn-primary">Closed</button>
+ <section class="container mx-auto mt-10 content-center space-x-2 bg-white">
+    <button onclick="loadAllCard(), act(`btnAll`)" class="btn btn-soft btn-lg act" id="btnAll">All</button>
+    <button class="btn btn-lg btn-soft " id="btnOpen"  onclick="act(`btnOpen`), displayOpenClose('open')">Open</button>
+    <button class="btn btn-lg btn-soft " id="btnClosed"  onclick="act(`btnClosed`), displayOpenClose('close')">Closed</button>
  </section>
 
     <div class="flex justify-between container mx-auto mt-10 bg-white">
