@@ -124,3 +124,48 @@ const loadAllCard = ()=>{
 loadAllCard()
 
 
+document.getElementById('btn-search').addEventListener('click',()=>{
+    const searchValue = document.getElementById('searchValue')
+    let srValue = searchValue.value.trim().toLowerCase()
+    console.log(srValue)
+
+    fetch(`https://phi-lab-server.vercel.app/api/v1/lab/issues/search?q=${srValue}`)
+    .then(ob =>ob.json())
+    .then(i => {
+         const allTheCard = document.getElementById('AllCardContain')
+         const issueCounter = document.getElementById('issues')
+         issueCounter.innerText = i.data.length
+         allTheCard.innerHTML = " "
+
+         i.data.forEach( (ob) =>{
+            
+            // console.log(ob)
+            const cardHolderDiv = document.createElement('div')
+            cardHolderDiv.innerHTML = `${ob.status ==='open'? ` <div id="${ob.id}" class="open space-y-5 bg-slate-100 container h-full border-t-4 border-[#00A96E]" onclick="modalInfo(${ob.id})">`:` <div id="${ob.id}" class="close space-y-5 bg-slate-100 container h-full border-t-4 border-[#A855F7]" onclick="modalInfo(${ob.id})">`}
+           
+            <div id="highLow" class="flex justify-between">
+                
+                ${ob.status === 'open'? `<img src="./assets/Open-Status.png" class="w-10 h-10">`:`<img src="./assets/Closed-Status.png" class="w-10 h-10">`}
+                <button class="btn btn-error text-[#EF4444] bg-[#ef444450] rounded-full">${ob.priority}</button>
+            </div>
+            <p class="font-bold">${ob.title}</p>
+            <p class="text-[#64748b]">${ob.description}</p>
+
+            <div class="flex justify-start gap-5">
+            ${ob.labels[1] ? `<button class="btn btn-error text-[#EF4444] bg-[#ef444450] rounded-full">${ob.labels[0]}</button>
+                <button class="btn btn-warning bg-[#d9770650]">${ob.labels[1]}</button>`:`<button class="btn btn-success">${ob.labels[0]}</button>`}
+                
+            </div>
+            <hr class="text-[#64748b]">
+
+            <p>${ob.author}</p>
+            <p>${new Date(ob.createdAt).toISOString().split('T')[0]}</p>
+
+        </div>`
+        allTheCard.appendChild(cardHolderDiv)
+        })
+    })
+
+   
+   
+})
